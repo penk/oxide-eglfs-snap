@@ -1,0 +1,37 @@
+name: oxide-digitalsignage
+version: 1
+summary: Digital Signage Demo
+description: Digital Signage based on Oxide WebView
+confinement: strict
+
+apps:
+    start-oxide:
+        command: start-oxide
+        plugs: [browser-support, opengl, network, network-bind, x11]
+
+parts:
+    oxide:
+        plugin: nil
+        stage-packages:
+            - liboxideqt-qmlplugin
+            - qmlscene
+            - qt5-default
+            - qtchooser
+            - qtbase5-dev
+            - qtdeclarative5-ubuntu-ui-toolkit-plugin
+            - qtdeclarative5-dev
+        filesets:
+            unwanted:
+                - -usr/lib/x86_64-linux-gnu/libQt5*.so* 
+                - -usr/lib/x86_64-linux-gnu/qt5/
+                - -usr/lib/x86_64-linux-gnu/libOxideQt*
+                - -usr/lib/x86_64-linux-gnu/oxide-qt/
+        stage: 
+            - $unwanted
+    prebuilt:
+        plugin: tar-content
+        source: ../prebuilt-qt5-amd64.tgz
+        destination: ./usr/lib/x86_64-linux-gnu/
+    common:
+        plugin: dump
+        source: data
