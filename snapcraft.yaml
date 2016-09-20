@@ -30,7 +30,7 @@ parts:
             - $unwanted
     prebuilt:
         plugin: tar-content
-        source: ../prebuilt-qt5-amd64.tgz
+        source: https://github.com/penk/oxide-eglfs-snap/releases/download/beta/prebuilt-qt5-amd64.tgz
         destination: ./usr/lib/x86_64-linux-gnu/
     common:
         plugin: dump
