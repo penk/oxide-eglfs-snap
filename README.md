@@ -2,7 +2,7 @@
 
 This is a snap package of Qt5 and Oxide, with default `EGLFS` QPA, so the WebView works without display server. 
 
-The `x86_64` version is using `eglfs_kms` backend (KMS/DRM), and the RPi2/3 version is using `eglfs_brcm`. 
+The `amd64` version is using `eglfs_kms` backend (KMS/DRM), and the RPi2/3 version is using `eglfs_brcm` backend from Broadcom's dispmanx/EGL driver.
 
 ![](http://i.imgur.com/L7GWZiF.jpg)
 
