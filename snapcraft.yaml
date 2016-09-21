@@ -19,19 +19,19 @@ parts:
             - qtchooser
             - qtbase5-dev
             - qtdeclarative5-ubuntu-ui-toolkit-plugin
+            - libraspberrypi0
             - qtdeclarative5-dev
         filesets:
             unwanted:
-                - -usr/lib/x86_64-linux-gnu/libQt5*.so* 
-                - -usr/lib/x86_64-linux-gnu/qt5/
-                - -usr/lib/x86_64-linux-gnu/libOxideQt*
-                - -usr/lib/x86_64-linux-gnu/oxide-qt/
-        stage: 
-            - $unwanted
+                - -usr/lib/arm-linux-gnueabihf/libQt5*.so* 
+                - -usr/lib/arm-linux-gnueabihf/qt5/
+                - -usr/lib/arm-linux-gnueabihf/mesa-egl/
+                stage: 
+                    - $unwanted
     prebuilt:
         plugin: tar-content
-        source: https://github.com/penk/oxide-eglfs-snap/releases/download/beta/prebuilt-qt5-amd64.tgz
-        destination: ./usr/lib/x86_64-linux-gnu/
+        source: https://github.com/penk/oxide-eglfs-snap/releases/download/beta/prebuilt-qt5-armhf.tgz
+        destination: ./usr/lib/arm-linux-gnueabihf/
     common:
         plugin: dump
         source: data

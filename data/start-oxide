@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x 
 
 if [ "$SNAP_ARCH" == "amd64" ]; then
 	ARCH="x86_64-linux-gnu"
@@ -61,17 +62,10 @@ export APP_DIR=$SNAP
 # ensure the snappy gl libs win
 export LD_LIBRARY_PATH="$SNAP_LIBRARY_PATH:$LD_LIBRARY_PATH"
 
-export QTDIR=$SNAP/usr/lib/x86_64-linux-gnu/qt5/
-export QT_PLUGIN_PATH=$QTDIR/plugins/
-export QML2_IMPORT_PATH=$QTDIR/qml/
+export OXIDE_NO_SANDBOX=1
+export QT_QPA_EGLFS_DEBUG=yes
 export QT_LOGGING_RULES=qt.qpa.*=true
 export QT_DEBUG_PLUGINS=1 
 
-export OXIDE_NO_SANDBOX=1
-export QT_QPA_PLATFORM=eglfs
-export QT_QPA_EGLFS_INTEGRATION=eglfs_kms
-export QML_IMPORT_TRACE=1
-
 cd $SNAP
-
 exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml
