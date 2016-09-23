@@ -8,6 +8,12 @@ The `amd64` version is using `eglfs_kms` backend (KMS/DRM), and the RPi2/3 versi
 
 ## Build 
 
+You'll need to add `ppa:ci-train-ppa-service/stable-phone-overlay` PPA for more recent packages: 
+
+    sudo add-apt-repository ppa:ci-train-ppa-service/stable-phone-overlay
+    
+Then build it with:
+
     snapcraft snap 
     
 ## Install
