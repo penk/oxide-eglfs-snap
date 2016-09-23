@@ -24,12 +24,12 @@ The `--devmode` parameter is required since EGLFS scans video devices, and curre
 
 ## Run
 
-If you have more than one graphic card, you'll need to disable the other one (`nouveau` for nVidia, `radeon` for AMD), and stop X11 session:
+Stop the X11 session, and if you have more than one graphic card, you'll need to disable the other one (`nouveau` for nVidia, `radeon` for AMD), too: 
 
     systemctl stop lightdm
     sudo modprobe -r nouveau
 
-And execute the browser by:
+Then launch the WebView by: 
 
     /snap/bin/oxide-digitalsignage.start-oxide
 
