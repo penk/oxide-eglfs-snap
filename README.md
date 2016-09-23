@@ -22,6 +22,17 @@ Then build it with:
 
 The `--devmode` parameter is required since EGLFS scans video devices, and currently there's no plug for that. 
 
+## Run
+
+If you have more than one graphic card, you'll need to disable the other one (`nouveau` for nVidia, `radeon` for AMD), and stop X11 session:
+
+    systemctl stop lightdm
+    sudo modprobe -r nouveau
+
+And execute the browser by:
+
+    /snap/bin/oxide-digitalsignage.start-oxide
+
 ## Details 
 
 There's [prebuilt Qt5 binaries](https://github.com/penk/oxide-eglfs-snap/releases) needed that's linked against OpenGLES, that will be extracted via `tar-content` plugin and copied over to `prime/`. We could try to use stage packages like `libqt5gui5-gles` in the future. 
