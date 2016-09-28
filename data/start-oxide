@@ -68,4 +68,4 @@ export QT_LOGGING_RULES=qt.qpa.*=true
 export QT_DEBUG_PLUGINS=1 
 
 cd $SNAP
-exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml
+exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml $@
