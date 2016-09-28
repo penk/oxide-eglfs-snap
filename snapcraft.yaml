@@ -2,7 +2,7 @@ name: oxide-digitalsignage
 version: 1
 summary: Digital Signage Demo
 description: Digital Signage based on Oxide WebView
-confinement: strict
+confinement: devmode
 
 apps:
     start-oxide:
@@ -24,6 +24,8 @@ parts:
         filesets:
             unwanted:
                 - -usr/lib/arm-linux-gnueabihf/mesa-egl/
+                - -usr/lib/arm-linux-gnueabihf/libGLESv2.so
+                - -usr/lib/arm-linux-gnueabihf/libEGL.so
         snap: 
             - $unwanted
     common:

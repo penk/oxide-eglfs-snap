@@ -63,6 +63,8 @@ export APP_DIR=$SNAP
 export LD_LIBRARY_PATH="$SNAP_LIBRARY_PATH:$LD_LIBRARY_PATH"
 
 export OXIDE_NO_SANDBOX=1
+export QT_QPA_PLATFORM=eglfs
+export QT_QPA_EGLFS_INTEGRATION=eglfs_brcm 
 export QT_QPA_EGLFS_DEBUG=yes
 export QT_LOGGING_RULES=qt.qpa.*=true
 export QT_DEBUG_PLUGINS=1 
