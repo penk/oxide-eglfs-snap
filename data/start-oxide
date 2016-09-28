@@ -74,4 +74,4 @@ export QML_IMPORT_TRACE=1
 
 cd $SNAP
 
-exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml
+exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml $@

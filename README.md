@@ -31,7 +31,7 @@ Stop the X11 session, and if you have more than one graphic card, you'll need to
 
 Then launch the WebView by: 
 
-    /snap/bin/oxide-digitalsignage.start-oxide
+    /snap/bin/oxide-digitalsignage.start-oxide --url="http://google.com"
 
 ## Details 
 
