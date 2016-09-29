@@ -19,6 +19,10 @@ Then build it with:
 ## Install
 
     sudo snap install oxide-digitalsignage_1_amd64.snap --force-dangerous --devmode 
+    
+Or install from `beta` channel:
+
+    sudo snap install oxide-digitalsignage --devmode --channel=beta
 
 The `--devmode` parameter is required since EGLFS scans video devices, and currently there's no plug for that. 
 
