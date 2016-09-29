@@ -15,6 +15,10 @@ You can build it from the source of `libqt5gui5` package with `libraspberrypi-de
 
     sudo snap install --force-dangerous --devmode oxide-digitalsignage_1_armhf.snap 
 
+Or install from `beta` channel: 
+
+    sudo snap install oxide-digitalsignage --devmode --channel=beta
+
 ## Config 
 
 If you encountered `glGetError 0x505` error while opening some page, please increase the GPU memory setting based on your Pi's model. 
