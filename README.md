@@ -6,23 +6,15 @@ The `amd64` version is using `eglfs_kms` backend (KMS/DRM), and the RPi2/3 versi
 
 ![](http://i.imgur.com/L7GWZiF.jpg)
 
-## Build 
-
-You'll need to add `ppa:ci-train-ppa-service/stable-phone-overlay` PPA for more recent packages: 
-
-    sudo add-apt-repository ppa:ci-train-ppa-service/stable-phone-overlay
-    
-Then build it with:
-
-    snapcraft snap 
-    
 ## Install
 
-    sudo snap install oxide-digitalsignage_1_amd64.snap --force-dangerous --devmode 
-    
-Or install from `beta` channel:
+Install from `beta` channel in the store: 
 
     sudo snap install oxide-digitalsignage --devmode --channel=beta
+
+Or download snap [oxide-digitalsignage_1_amd64.snap](https://github.com/penk/oxide-eglfs-snap/releases/download/beta/oxide-digitalsignage_1_amd64.snap), and install locally: 
+
+    sudo snap install oxide-digitalsignage_1_amd64.snap --force-dangerous --devmode 
 
 The `--devmode` parameter is required since EGLFS scans video devices, and currently there's no plug for that. 
 
@@ -32,11 +24,22 @@ Stop the X11 session, and if you have more than one graphic card, you'll need to
 
     systemctl stop lightdm
     sudo chmod a+rw /dev/dri/*
+
     sudo modprobe -r nouveau
 
 Then launch the WebView by: 
 
-    /snap/bin/oxide-digitalsignage.start-oxide --url="http://google.com"
+    /snap/bin/oxide-digitalsignage.start-oxide --url="http://google.com/ncr"
+
+## Build 
+
+You'll need to add `ppa:ci-train-ppa-service/stable-phone-overlay` PPA for more recent packages: 
+
+    sudo add-apt-repository ppa:ci-train-ppa-service/stable-phone-overlay
+    
+Then build it with:
+
+    snapcraft snap 
 
 ## Details 
 
