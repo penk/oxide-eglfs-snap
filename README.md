@@ -27,6 +27,7 @@ The `--devmode` parameter is required since EGLFS scans video devices, and curre
 Stop the X11 session, and if you have more than one graphic card, you'll need to disable the other one (`nouveau` for nVidia, `radeon` for AMD), too: 
 
     systemctl stop lightdm
+    sudo chmod a+rw /dev/dri/*
     sudo modprobe -r nouveau
 
 Then launch the WebView by: 
