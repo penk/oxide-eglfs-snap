@@ -15,6 +15,12 @@ Edit `/boot/firmware/config.txt` and add one line:
 
     gpu_mem=448 
 
+## Run
+
+Launch the WebView by:
+
+    /snap/bin/oxide-digitalsignage.start-oxide --url="http://google.com/ncr"
+
 ## Build 
 
 You'll need to add `ppa:ubuntu-raspi2/ppa` PPA for dependency (`libraspberrypi0`): 
