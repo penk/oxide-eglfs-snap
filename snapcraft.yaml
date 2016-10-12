@@ -2,11 +2,12 @@ name: oxide-digitalsignage
 version: 1
 summary: Digital Signage Demo
 description: Digital Signage based on Oxide WebView
-confinement: strict
+confinement: devmode
 
 apps:
     start-oxide:
         command: start-oxide
+        daemon: simple
         plugs: [browser-support, opengl, network, network-bind, x11]
 
 parts:

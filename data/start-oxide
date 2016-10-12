@@ -64,14 +64,19 @@ export LD_LIBRARY_PATH="$SNAP_LIBRARY_PATH:$LD_LIBRARY_PATH"
 export QTDIR=$SNAP/usr/lib/x86_64-linux-gnu/qt5/
 export QT_PLUGIN_PATH=$QTDIR/plugins/
 export QML2_IMPORT_PATH=$QTDIR/qml/
-export QT_LOGGING_RULES=qt.qpa.*=true
-export QT_DEBUG_PLUGINS=1 
+#export QT_LOGGING_RULES=qt.qpa.*=true
+#export QT_DEBUG_PLUGINS=1 
 
 export OXIDE_NO_SANDBOX=1
 export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EGLFS_INTEGRATION=eglfs_kms
-export QML_IMPORT_TRACE=1
+#export QML_IMPORT_TRACE=1
+
+if [ ! -e $SNAP_USER_DATA/URL ]; then
+    cp $SNAP/default $SNAP_USER_DATA/URL
+fi
+export URL=`cat $SNAP_USER_DATA/URL`
 
 cd $SNAP
 
-exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml $@
+exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml --url=$URL $@
