@@ -19,6 +19,7 @@ Edit `/boot/firmware/config.txt` and add one line:
 
 Launch the WebView by:
 
+    sudo chmod a+rw /dev/vchiq
     /snap/bin/oxide-digitalsignage.start-oxide --url="http://google.com/ncr"
 
 ## Build 
