@@ -11,7 +11,7 @@ Or download snap [oxide-digitalsignage_1_armhf.snap](https://github.com/penk/oxi
 ## Config 
 
 If you encountered `glGetError 0x505` error while opening some page, please increase the GPU memory setting based on your Pi's model. 
-Edit `/boot/firmware/config.txt` and add one line: 
+Edit `/boot/uboot/config.txt` and add one line: 
 
     gpu_mem=448 
 
