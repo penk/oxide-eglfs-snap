@@ -8,6 +8,10 @@ apps:
     start-oxide:
         command: start-oxide
         plugs: [browser-support, opengl, network, network-bind, x11]
+    chmod-vchiq:
+        command: chmod-vchiq
+        daemon: simple
+        plugs: [ opengl ]
 
 parts:
     oxide:
