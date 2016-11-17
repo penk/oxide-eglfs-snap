@@ -6,14 +6,20 @@ Install from `beta` channel in the store:
 
 Or download snap [oxide-digitalsignage_1_armhf.snap](https://github.com/penk/oxide-eglfs-snap/releases/download/beta/oxide-digitalsignage_1_armhf.snap), and install locally:
 
-    sudo snap install --force-dangerous --devmode oxide-digitalsignage_1_armhf.snap 
+    sudo snap install --dangerous --devmode oxide-digitalsignage_1_armhf.snap 
 
 ## Config 
 
 If you encountered `glGetError 0x505` error while opening some page, please increase the GPU memory setting based on your Pi's model. 
+
+    
+On ubuntu core image, you need first to make the partition writable via: `sudo mount -o remount rw /boot/uboot`
+
 Edit `/boot/uboot/config.txt` and add one line: 
 
     gpu_mem=448 
+
+and reboot.
 
 ## Run
 
