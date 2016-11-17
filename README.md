@@ -6,7 +6,7 @@ Install from `beta` channel in the store:
 
 Or download snap [oxide-digitalsignage_1_armhf.snap](https://github.com/penk/oxide-eglfs-snap/releases/download/beta/oxide-digitalsignage_1_armhf.snap), and install locally:
 
-    sudo snap install --force-dangerous --devmode oxide-digitalsignage_1_armhf.snap 
+    sudo snap install --dangerous --devmode oxide-digitalsignage_1_armhf.snap 
 
 ## Config 
 
