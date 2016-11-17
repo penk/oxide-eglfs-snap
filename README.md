@@ -14,7 +14,7 @@ Install from `beta` channel in the store:
 
 Or download snap [oxide-digitalsignage_1_amd64.snap](https://github.com/penk/oxide-eglfs-snap/releases/download/beta/oxide-digitalsignage_1_amd64.snap), and install locally: 
 
-    sudo snap install oxide-digitalsignage_1_amd64.snap --force-dangerous --devmode 
+    sudo snap install oxide-digitalsignage_1_amd64.snap --dangerous --devmode
 
 The `--devmode` parameter is required since EGLFS scans video devices, and currently there's no plug for that. 
 
