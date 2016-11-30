@@ -3,11 +3,11 @@ version: 1
 summary: Digital Signage Demo
 description: Digital Signage based on Oxide WebView
 confinement: devmode
+grade: devel 
 
 apps:
     start-oxide:
         command: start-oxide
-        daemon: simple
         plugs: [browser-support, opengl, network, network-bind, x11]
 
 parts:
@@ -36,3 +36,13 @@ parts:
     common:
         plugin: dump
         source: data
+#    noise:
+#        plugin: dump
+#        source: https://codepen.io/eugene-bulkin/share/zip/zEgyH/
+#        organize: 
+#            '*': 'noise/'
+#    disco: 
+#        plugin: dump
+#        source: http://codepen.io/yoksel/share/zip/nxgrp/
+#        organize:
+#            '*': 'disco/'

@@ -72,11 +72,6 @@ export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EGLFS_INTEGRATION=eglfs_kms
 #export QML_IMPORT_TRACE=1
 
-if [ ! -e $SNAP_USER_DATA/URL ]; then
-    cp $SNAP/default $SNAP_USER_DATA/URL
-fi
-export URL=`cat $SNAP_USER_DATA/URL`
-
 cd $SNAP
 
-exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml --url=$URL $@
+exec $SNAP/usr/bin/qmlscene $SNAP/webview.qml $@
