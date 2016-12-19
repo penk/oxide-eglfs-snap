@@ -24,6 +24,7 @@ parts:
             - qtbase5-dev
             - qtdeclarative5-ubuntu-ui-toolkit-plugin
             - libraspberrypi0
+            - fonts-wqy-zenhei
             - qtdeclarative5-dev
         filesets:
             unwanted:
