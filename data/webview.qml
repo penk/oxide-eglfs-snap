@@ -14,16 +14,12 @@ Rectangle {
         console.log('URL: ' + addr)
     }
     WebView {
-        //url: 'http://feature-sliding-wall.ver.display.miappi.com/redbull'
-        //url: 'http://showcase.miappi.com/mothercare/latest'
         url: addr
-	//url: 'https://playcanv.as/p/RqJJ9oU9/'
-	//url: 'http://helloracer.com/webgl/'
-	//url: 'http://codepen.io/eltonkamami/pen/ECrKd'
         preferences.localStorageEnabled: true
         anchors.fill: parent
         context: WebContext {
             dataPath: 'file:///tmp/'
         }
+        onJavaScriptConsoleMessage: console.log(message)
     }
 }

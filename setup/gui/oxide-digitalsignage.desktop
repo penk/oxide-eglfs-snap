@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Oxide DigitalSignage
+Exec=oxide-digitalsignage.start-oxide
+Type=Application
