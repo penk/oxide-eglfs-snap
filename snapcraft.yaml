@@ -30,6 +30,10 @@ parts:
                 - -usr/lib/arm-linux-gnueabihf/mesa-egl/
                 - -usr/lib/arm-linux-gnueabihf/libGLESv2.so
                 - -usr/lib/arm-linux-gnueabihf/libEGL.so
+                - -usr/lib/arm-linux-gnueabihf/libQt5EglDeviceIntegration.so.5.6.1
+                - -usr/lib/arm-linux-gnueabihf/qt5/plugins/platforms/libqeglfs.so
+        stage:
+            - $unwanted                 
         snap: 
             - $unwanted
     common:
