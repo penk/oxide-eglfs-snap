@@ -3,6 +3,7 @@ version: 1
 summary: Digital Signage Demo
 description: Digital Signage based on Oxide WebView
 confinement: devmode
+grade: devel
 
 apps:
     start-oxide:
@@ -23,9 +24,9 @@ parts:
             - qtchooser
             - qtbase5-dev
             - qtdeclarative5-ubuntu-ui-toolkit-plugin
+            - qtdeclarative5-dev
             - libraspberrypi0
             - fonts-wqy-zenhei
-            - qtdeclarative5-dev
         filesets:
             unwanted:
                 - -usr/lib/arm-linux-gnueabihf/mesa-egl/
@@ -37,6 +38,10 @@ parts:
             - $unwanted                 
         snap: 
             - $unwanted
+    prebuilt:
+        plugin: tar-content
+        source: https://github.com/penk/oxide-eglfs-snap/releases/prebuilt-qt5-armhf.tgz
+        destination: ./usr/lib/arm-linux-gnueabihf/
     common:
         plugin: dump
         source: data
