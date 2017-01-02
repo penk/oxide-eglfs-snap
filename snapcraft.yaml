@@ -31,7 +31,7 @@ parts:
             - qtbase5-dev
             - qtdeclarative5-ubuntu-ui-toolkit-plugin
             - qtdeclarative5-dev
-            - libraspberrypi0
+#            - libraspberrypi0
             - fonts-wqy-zenhei
             - libqt5gui5-gles
         filesets:
