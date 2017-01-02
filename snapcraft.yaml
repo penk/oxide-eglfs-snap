@@ -33,7 +33,8 @@ parts:
             - qtdeclarative5-dev
 #            - libraspberrypi0
             - fonts-wqy-zenhei
-            - libqt5gui5-gles
+#            - libqt5gui5-gles
+            - libqt5gui5
         filesets:
             unwanted:
                 - -usr/lib/arm-linux-gnueabihf/mesa-egl/
