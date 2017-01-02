@@ -8,7 +8,12 @@ grade: devel
 apps:
     start-oxide:
         command: start-oxide
-        plugs: [browser-support, opengl, network, network-bind, x11]
+        plugs:
+            - browser-support
+            - opengl
+            - network
+            - network-bind
+            - x11
 
 parts:
     oxide:
