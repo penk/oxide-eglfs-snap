@@ -8,11 +8,17 @@ grade: devel
 apps:
     start-oxide:
         command: start-oxide
-        plugs: [browser-support, opengl, network, network-bind, x11]
+        plugs:
+            - browser-support
+            - opengl
+            - network
+            - network-bind
+            - x11
     chmod-vchiq:
         command: chmod-vchiq
         daemon: simple
-        plugs: [ opengl ]
+        plugs:
+            - opengl
 
 parts:
     oxide:
@@ -27,6 +33,7 @@ parts:
             - qtdeclarative5-dev
             - libraspberrypi0
             - fonts-wqy-zenhei
+            - libqt5gui5-gles
         filesets:
             unwanted:
                 - -usr/lib/arm-linux-gnueabihf/mesa-egl/
@@ -34,14 +41,14 @@ parts:
                 - -usr/lib/arm-linux-gnueabihf/libEGL.so
                 - -usr/lib/arm-linux-gnueabihf/libQt5EglDeviceIntegration.so.5.6.1
                 - -usr/lib/arm-linux-gnueabihf/qt5/plugins/platforms/libqeglfs.so
-        stage:
-            - $unwanted                 
-        snap: 
-            - $unwanted
-    prebuilt:
-        plugin: tar-content
-        source: https://github.com/penk/oxide-eglfs-snap/releases/prebuilt-qt5-armhf.tgz
-        destination: ./usr/lib/arm-linux-gnueabihf/
+#        stage:
+#            - $unwanted                 
+#        snap: 
+#            - $unwanted
+#    prebuilt:
+#        plugin: tar-content
+#        source: https://github.com/penk/oxide-eglfs-snap/releases/prebuilt-qt5-armhf.tgz
+#        destination: ./usr/lib/arm-linux-gnueabihf/
     common:
         plugin: dump
         source: data
