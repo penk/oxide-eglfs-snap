@@ -43,6 +43,8 @@ parts:
                 - -usr/lib/arm-linux-gnueabihf/qt5/plugins/platforms/libqeglfs.so
 #        stage: 
 #            - $unwanted
+#        snap: 
+#            - $unwanted
 #    prebuilt:
 #        plugin: tar-content
 #        source: https://github.com/penk/oxide-eglfs-snap/releases/download/beta/prebuilt-qt5-amd64.tgz
