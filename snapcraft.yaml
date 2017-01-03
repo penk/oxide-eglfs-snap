@@ -8,7 +8,17 @@ grade: devel
 apps:
     start-oxide:
         command: start-oxide
-        plugs: [browser-support, opengl, network, network-bind, x11]
+        plugs:
+            - browser-support
+            - opengl
+            - network
+            - network-bind
+            - x11
+    chmod-vchiq:
+        command: chmod-vchiq
+        daemon: simple
+        plugs:
+            - opengl
 
 parts:
     oxide:
@@ -21,28 +31,25 @@ parts:
             - qtbase5-dev
             - qtdeclarative5-ubuntu-ui-toolkit-plugin
             - qtdeclarative5-dev
+#            - libraspberrypi0
+            - fonts-wqy-zenhei
+#            - libqt5gui5-gles
+            - libqt5gui5
         filesets:
             unwanted:
-                - -usr/lib/x86_64-linux-gnu/libQt5*.so* 
-                - -usr/lib/x86_64-linux-gnu/qt5/
-                - -usr/lib/x86_64-linux-gnu/libOxideQt*
-                - -usr/lib/x86_64-linux-gnu/oxide-qt/
-        stage: 
-            - $unwanted
-    prebuilt:
-        plugin: tar-content
-        source: https://github.com/penk/oxide-eglfs-snap/releases/download/beta/prebuilt-qt5-amd64.tgz
-        destination: ./usr/lib/x86_64-linux-gnu/
+                - -usr/lib/arm-linux-gnueabihf/mesa-egl/
+                - -usr/lib/arm-linux-gnueabihf/libGLESv2.so
+                - -usr/lib/arm-linux-gnueabihf/libEGL.so
+                - -usr/lib/arm-linux-gnueabihf/libQt5EglDeviceIntegration.so.5.6.1
+                - -usr/lib/arm-linux-gnueabihf/qt5/plugins/platforms/libqeglfs.so
+#        stage: 
+#            - $unwanted
+#        snap: 
+#            - $unwanted
+#    prebuilt:
+#        plugin: tar-content
+#        source: https://github.com/penk/oxide-eglfs-snap/releases/download/beta/prebuilt-qt5-amd64.tgz
+#        destination: ./usr/lib/x86_64-linux-gnu/
     common:
         plugin: dump
         source: data
-#    noise:
-#        plugin: dump
-#        source: https://codepen.io/eugene-bulkin/share/zip/zEgyH/
-#        organize: 
-#            '*': 'noise/'
-#    disco: 
-#        plugin: dump
-#        source: http://codepen.io/yoksel/share/zip/nxgrp/
-#        organize:
-#            '*': 'disco/'
